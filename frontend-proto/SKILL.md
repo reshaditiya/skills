@@ -1,106 +1,65 @@
 ---
 name: frontend-proto
-description: Build quick, text-first frontend prototypes with a library-first approach, compact one-column layouts, careful copy, restrained color, and minimal custom styling.
+description: Build quick, text-first frontend prototypes with great developer experience, library defaults, markdown-like layouts, careful typography, breathing room, and minimal custom styling.
 ---
 
 # Frontend Prototyping
 
-Use this skill for fast frontend prototypes, small flows, forms, and early product experiments. Optimize for speed, clarity, readable text, and easy iteration rather than visual spectacle or production-grade polish.
+Use this skill for fast prototypes, small flows, forms, and early product experiments. Prioritize great developer experience, clarity, and easy iteration over visual spectacle or production-grade polish.
 
-## Working Rules
+## Priorities
 
-- Inspect the project before coding. Identify the framework, package manager, existing UI/component library, form and validation libraries, design tokens, and local conventions.
-- Reuse existing components, tokens, utilities, and patterns. Do not add a dependency when the project already provides a solution.
-- Prefer library primitives and layout utilities over custom CSS. Add custom styling only when the library cannot express a required layout or interaction.
-- Keep one-off prototype code local and simple. Extract components only when they are reused or the split makes the code easier to understand.
-- Keep the prototype to one page unless the requirement explicitly needs more. Do not add routing, persistence, custom animations, or abstractions that are not needed to demonstrate the flow. If motion is needed, use the existing library's default animation rather than creating custom timing or effects.
-- Prefer text over illustrations, images, and icons. Explain actions and state changes with short, clear writing.
-- Prioritize developer experience: favor familiar library defaults, minimal custom CSS, few dependencies, and code that is easy to read, edit, and replace.
+- Inspect the existing framework, package manager, UI library, tokens, and form patterns before coding.
+- Reuse existing components, tokens, utilities, and default styling. Avoid unnecessary dependencies, abstractions, and custom CSS.
+- Keep the prototype to one page unless more is required. Avoid routing, persistence, and invented business logic.
+- Keep handlers local and simple. If behavior is unspecified, leave a small named empty handler or stub for the user to fill in.
+- Use library-default animation only when motion is needed. Do not create custom animation timing or effects.
+- Use text to explain actions and states. Do not add illustrations, images, visualizations, or icons unless explicitly required.
 
-## Layout
+## Layout and Type
 
-- Default to a single-column layout so the page stays readable and responsive.
-- Use multiple columns only when the requirement clearly needs separation. Never add columns just to fill available space.
-- Use a comfortable max width and leave breathing room around content. Do not stretch every section to the full viewport width unless the requirement calls for it.
+- Prefer a responsive one-column layout with a comfortable readable width.
 - Treat the page like readable markdown: one clear heading, short supporting copy, meaningful sections, and obvious actions.
-- Keep the structure compact. Avoid dashboards, dense grids, decorative hero sections, and extra panels unless the user asks for them.
-- Ensure the layout works on narrow screens, with longer text, and without horizontal scrolling.
+- Give the page breathing room with generous, purposeful spacing around sections, controls, and text. Do not crowd content or stretch it to fill the viewport.
+- Treat text as the primary visual material. Use careful copy, type size, weight, line height, spacing, and neutral shades to create hierarchy.
+- Keep muted text readable and avoid marketing filler, inflated claims, and placeholder-sounding copy.
+- Make long text and narrow screens work without horizontal scrolling.
 
-## Text and Visual Hierarchy
+## Color and Depth
 
-- Treat text as the primary visual material. Write copy that is plain, direct, concise, and carefully edited.
-- Use clear headings, labels, helper text, and state messages. Give each section one clear job.
-- Use type size, weight, line height, spacing, and restrained neutral shades to distinguish headings, body text, supporting text, metadata, and status messages.
-- Keep softer text readable. Do not use low contrast just to create hierarchy.
-- Avoid marketing jargon, inflated claims, and placeholder-sounding prose.
-- Prefer labels such as "Add task", "Save changes", or "Nothing here yet" over promotional language.
-- Do not add illustrations, images, visualizations, or icons unless explicitly required.
-- Do not invent brand language, metrics, testimonials, or product claims.
+- Use existing tokens with mostly neutral colors and one restrained accent when needed.
+- Use semantic colors only for errors, warnings, and success.
+- Use subtle shadow or blur/backdrop blur only when it improves depth for a surface or overlay. Keep text surfaces clear and readable.
+- Prefer shadow and blur over heavy borders, gradients, or decorative color effects.
+- Give one action clear visual priority; keep secondary actions quiet.
 
-## Color and Actions
+## Forms and States
 
-- Use mostly neutral backgrounds, text, borders, and surfaces with one restrained accent hue when needed.
-- Use the existing design tokens when available.
-- Create hierarchy with text shade, weight, size, and spacing rather than decorative color.
-- Use restrained shadows and limited blur or backdrop blur as the primary depth cues for elevated surfaces and overlays. Keep body text clear and readable.
-- Use semantic colors only for errors, warnings, and success; these are status states, not extra branding colors.
-- Give one action clear visual priority. Keep secondary actions quiet, using text or a basic outline instead of competing filled buttons.
-- Prefer shadow and blur over heavy borders, gradients, or decorative color effects. Do not style non-actions to look clickable.
+- Use the existing form and validation library. Otherwise use native browser constraints such as `required`, `type`, `min`, `max`, and `pattern`.
+- Give every control an appropriate visible label. Never use placeholder text as the only label.
+- Use appropriate input types, names, and autocomplete hints when useful.
+- Show field-level errors, preserve entered values, and do not rely on color or a toast alone.
+- Prepare relevant initial, empty, loading, submitting, disabled, success, and error states. Explain them with concise text.
 
-## Forms and Validation
+## Semantics
 
-- Inspect existing dependencies and project patterns before implementing a form.
-- Use the existing form and validation library when one is already present.
-- If no library exists, use native browser validation with semantic controls and constraints such as `required`, `type`, `min`, `max`, and `pattern`. Use the Constraint Validation API only when native constraints are not enough.
-- Associate every control with an appropriate visible label. Never use placeholder text as the only label. Use `fieldset` and `legend` for related controls when appropriate.
-- Use appropriate input types, names, and autocomplete hints when they improve the form.
-- Show useful, field-level errors near the relevant control. Do not rely on color, a toast, or a single generic message.
-- Preserve entered values after validation failures and make the invalid state easy to find.
-- Do not build a custom validation system for a simple prototype when browser validation is sufficient.
+- Use semantic HTML and real buttons and links.
+- Use visible labels and native semantics first. Add `aria-label` or other ARIA only when necessary; keep it minimal so it does not clutter the code.
+- Use logical headings and landmarks. Do not add custom keyboard or focus behavior when native controls are enough.
 
-## State Coverage and Behavior
+## Flow
 
-- Prepare the useful states for each main flow: initial, empty, loading, submitting, disabled, success, and error.
-- Explain states with concise text. Do not add an illustration, image, or icon to compensate for unclear copy.
-- Keep event handlers and business logic local, simple, and easy to replace.
-- If behavior or an API is not provided, use a small named empty handler or simple stub for the user to fill in. Do not invent persistence, network behavior, or complex business rules.
+1. Inspect the stack and reusable building blocks.
+2. Reduce the requirement to the smallest useful page and write the copy and state messages.
+3. Build the one-column layout with existing components, tokens, and library defaults.
+4. Add only the required interactions, states, and validation.
+5. Check responsive behavior, text wrapping, labels, error messages, typography, spacing, and readability.
 
-## Accessibility and Semantics
+## Completion
 
-- Use semantic elements such as `header`, `nav`, `main`, `section`, `form`, `label`, `button`, `fieldset`, `legend`, `ul`, and `ol` according to their meaning.
-- Keep semantics separate from presentation. Use the UI library's styling props, classes, or tokens for appearance, and use the correct semantic element or `as`/`component` option for meaning.
-- Prefer a real `button` or link over a clickable `div`.
-- Use a logical heading hierarchy and clear landmarks.
-- Use visible labels and native semantics first. Add `aria-label` or other ARIA only when native HTML cannot provide the necessary accessible name or relationship.
-- Keep ARIA minimal. Do not use it to compensate for incorrect HTML or add it to every control by default.
-- Do not add custom keyboard or focus behavior unless the required interaction cannot work with native controls.
-
-## Implementation Flow
-
-1. Inspect the existing stack and reusable building blocks.
-2. Reduce the requirement to the smallest useful page and content structure.
-3. Write the page copy and state messages before adding decorative styling.
-4. Build the semantic one-column layout with existing components and tokens.
-5. Add only the interactions, state coverage, and validation needed to demonstrate the flow.
-6. Check narrow-screen behavior, text wrapping, labels, validation messages, state messages, and text hierarchy.
-
-## Completion Checklist
-
-Before considering the prototype complete, confirm:
-
-- The page is one column unless a two-column layout is clearly useful.
-- The page has comfortable spacing, a readable width, and no horizontal scrolling.
-- Existing libraries and tokens were reused.
-- Custom CSS and new dependencies are justified.
-- The copy is direct, carefully written, and free of marketing filler.
-- Text hierarchy is clear through typography, spacing, and restrained neutral shades.
-- Depth is communicated primarily with restrained shadows and blur, without reducing text readability.
-- Empty, loading, submitting, disabled, success, and error states are covered where relevant.
-- Forms use an existing validation library or native browser validation.
-- Every form control has an appropriate visible label and useful error feedback.
-- ARIA is used only when native semantics are not enough.
-- Event handlers and business logic are minimal, with unspecified behavior left as simple stubs.
-- The page uses mostly neutral colors and no decorative illustrations, images, or icons unless required.
-- Existing library animation defaults are reused when motion is needed; custom animation is avoided.
-- The implementation is easy to understand and change, with minimal custom code and dependencies.
-- Only the primary CTA is visually prominent; other actions are quieter.
+- DX is simple: existing defaults are reused, custom code is minimal, and the implementation is easy to edit.
+- The page is responsive, readable, and has purposeful breathing room.
+- Typography and copy provide the visual hierarchy.
+- Relevant states, labels, and field-level errors are covered.
+- Color is restrained; shadow or blur is optional and does not reduce readability.
+- No custom animation or decorative visuals were added without a clear need.
