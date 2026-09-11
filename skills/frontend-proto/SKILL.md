@@ -20,6 +20,7 @@ Use this skill for fast prototypes, small flows, forms, and early product experi
 ## Layout and Type
 
 - Prefer a responsive one-column layout with a comfortable readable width.
+- When content alone is sufficient, create only the content section; omit headers, footers, and other sections unless they are needed. Prefer a simple article/Markdown-like layout.
 - Treat the page like readable markdown: one clear heading, short supporting copy, meaningful sections, and obvious actions.
 - Give the page breathing room with generous, purposeful spacing around sections, controls, and text. Do not crowd content or stretch it to fill the viewport.
 - Treat text as the primary visual material. Use careful copy, type size, weight, line height, spacing, and neutral shades to create hierarchy.
