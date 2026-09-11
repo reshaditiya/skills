@@ -13,8 +13,9 @@ Use this skill for fast frontend prototypes, small flows, forms, and early produ
 - Reuse existing components, tokens, utilities, and patterns. Do not add a dependency when the project already provides a solution.
 - Prefer library primitives and layout utilities over custom CSS. Add custom styling only when the library cannot express a required layout or interaction.
 - Keep one-off prototype code local and simple. Extract components only when they are reused or the split makes the code easier to understand.
-- Keep the prototype to one page unless the requirement explicitly needs more. Do not add routing, persistence, animations, or abstractions that are not needed to demonstrate the flow.
+- Keep the prototype to one page unless the requirement explicitly needs more. Do not add routing, persistence, custom animations, or abstractions that are not needed to demonstrate the flow. If motion is needed, use the existing library's default animation rather than creating custom timing or effects.
 - Prefer text over illustrations, images, and icons. Explain actions and state changes with short, clear writing.
+- Prioritize developer experience: favor familiar library defaults, minimal custom CSS, few dependencies, and code that is easy to read, edit, and replace.
 
 ## Layout
 
@@ -41,9 +42,10 @@ Use this skill for fast frontend prototypes, small flows, forms, and early produ
 - Use mostly neutral backgrounds, text, borders, and surfaces with one restrained accent hue when needed.
 - Use the existing design tokens when available.
 - Create hierarchy with text shade, weight, size, and spacing rather than decorative color.
+- Use restrained shadows and limited blur or backdrop blur as the primary depth cues for elevated surfaces and overlays. Keep body text clear and readable.
 - Use semantic colors only for errors, warnings, and success; these are status states, not extra branding colors.
 - Give one action clear visual priority. Keep secondary actions quiet, using text or a basic outline instead of competing filled buttons.
-- Avoid gradients, decorative color effects, and styling that makes non-actions look clickable.
+- Prefer shadow and blur over heavy borders, gradients, or decorative color effects. Do not style non-actions to look clickable.
 
 ## Forms and Validation
 
@@ -92,10 +94,13 @@ Before considering the prototype complete, confirm:
 - Custom CSS and new dependencies are justified.
 - The copy is direct, carefully written, and free of marketing filler.
 - Text hierarchy is clear through typography, spacing, and restrained neutral shades.
+- Depth is communicated primarily with restrained shadows and blur, without reducing text readability.
 - Empty, loading, submitting, disabled, success, and error states are covered where relevant.
 - Forms use an existing validation library or native browser validation.
 - Every form control has an appropriate visible label and useful error feedback.
 - ARIA is used only when native semantics are not enough.
 - Event handlers and business logic are minimal, with unspecified behavior left as simple stubs.
 - The page uses mostly neutral colors and no decorative illustrations, images, or icons unless required.
+- Existing library animation defaults are reused when motion is needed; custom animation is avoided.
+- The implementation is easy to understand and change, with minimal custom code and dependencies.
 - Only the primary CTA is visually prominent; other actions are quieter.
