@@ -7,6 +7,10 @@ description: Use for quick, text-first frontend prototypes and small UI flows wi
 
 Use this skill for fast prototypes, small flows, forms, and early product experiments. Prioritize developer experience, clarity, and easy iteration over visual spectacle or production-grade polish. Default to a small, responsive page that makes the requested flow understandable.
 
+## Aesthetic Goal
+
+Default to a quiet, text-first wiki or article page. The page should feel like readable Markdown: a simple responsive one-column document where typography, a comfortable reading measure, and generous whitespace establish hierarchy. Keep the visual treatment restrained and neutral; avoid dashboard chrome, card grids, decorative containers, and marketing-heavy presentation unless the request specifically calls for them.
+
 ## Scope
 
 - Implement layout, copy, controls, and visual state scaffolds by default.
