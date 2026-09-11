@@ -11,6 +11,12 @@ Use this skill for fast prototypes, small flows, forms, and early product experi
 
 Default to a quiet, text-first wiki or article page. The page should feel like readable Markdown: a simple responsive one-column document where typography, a comfortable reading measure, and generous whitespace establish hierarchy. Keep the visual treatment restrained and neutral; avoid dashboard chrome, card grids, decorative containers, and marketing-heavy presentation unless the request specifically calls for them.
 
+## Quality Bar
+
+- Treat "prototype" as a scope and iteration constraint, not a visual excuse. Make the product-facing experience feel intentional, coherent, and finished rather than experimental, rushed, or low-effort.
+- Do not expose prototype, experimental, demo, placeholder, or unfinished language in the rendered UI unless the request explicitly calls for it.
+- Use complete-looking labels, states, and copy. Do not render lorem ipsum, fake claims, TODOs, or apology text as part of the product experience.
+
 ## Scope
 
 - Implement layout, copy, controls, and visual state scaffolds by default.
@@ -36,6 +42,14 @@ Default to a quiet, text-first wiki or article page. The page should feel like r
 - Treat text as the primary visual material. Use careful copy, type size, weight, line height, spacing, and neutral shades to create hierarchy.
 - Keep muted text readable and avoid marketing filler, inflated claims, and placeholder-sounding copy.
 - Make long text and narrow screens work without horizontal scrolling.
+
+## Copywriting
+
+- Keep product copy brief, plainspoken, casual, and fun. Favor relaxed "bro" energy, playful phrasing, and small jokes over formal, corporate, stiff, or overly serious language. Translate "lazy" into relaxed and effortless, never careless or unfinished.
+- Prefer short sentences, specific labels, and useful microcopy. Let the interface do most of the explaining.
+- Keep jokes and playful asides present when they fit. Humor must not hide the actual status, error, warning, or next step, and it should never become scolding or bleak.
+- Avoid long explanations, marketing language, hype, filler, generic slogans, and placeholder copy.
+- Do not call the product a prototype, experiment, demo, or work in progress in product-facing copy unless explicitly requested.
 
 ## Color and Depth
 
@@ -78,6 +92,8 @@ Default to a quiet, text-first wiki or article page. The page should feel like r
 - The page is responsive, readable, and has purposeful breathing room.
 - The UI includes only what is needed to understand the requested flow.
 - Typography and copy provide the visual hierarchy through a markdown-like document flow.
+- Product-facing copy is brief, casual, and fun, with a friendly bro-like voice and jokes that feel natural.
+- The experience feels intentional and finished, not like a demo or unfinished experiment.
 - Relevant states, labels, and field-level errors are covered.
 - State UI is visibly distinct but remains readable and does not rely on color or blur alone.
 - Existing roundedness and default component styling remain unchanged.
