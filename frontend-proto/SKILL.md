@@ -10,6 +10,7 @@ Use this skill for fast prototypes, small flows, forms, and early product experi
 ## Priorities
 
 - Inspect the existing framework, package manager, UI library, tokens, and form patterns before coding.
+- If the project is not scaffolded yet, prefer Next.js with Tailwind CSS and shadcn/ui by default.
 - Reuse existing components, tokens, utilities, and default styling. Avoid unnecessary dependencies, abstractions, and custom CSS.
 - Keep the prototype to one page unless more is required. Avoid routing, persistence, and invented business logic.
 - Keep handlers local and simple. If behavior is unspecified, leave a small named empty handler or stub for the user to fill in.
