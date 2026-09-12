@@ -23,6 +23,8 @@ Use for fast prototypes, small flows, forms, and early product experiments. Prio
 
 - Prefer a responsive, one-column article or Markdown-like layout with a readable measure, generous whitespace, one clear heading, meaningful sections, and obvious actions. Omit headers, footers, and extra chrome when content alone is enough.
 - Use typography, spacing, contrast, and neutral shades to establish hierarchy. Keep muted text readable and prevent horizontal scrolling.
+- Keep the type scale restrained: the largest text may be no more than `2x` the base/body size. Build hierarchy with weight, line height, spacing, and contrast rather than extreme size jumps.
+- Use enough whitespace around sections to make them clear, but keep related elements close. Prefer a compact, newspaper-like rhythm over oversized gaps, especially within a section.
 - Use mostly neutral existing tokens and one restrained accent. Use semantic colors only for status. Never add borders, divider lines, rules, or bordered containers to separate ordinary content; use whitespace and spacing only. Preserve borders only when they are part of an existing functional control or component default.
 - Do not add custom gradients, blur, decorative effects, illustrations, images, visualizations, or icons unless explicitly required. Use library-default motion only when needed, never custom animation timing.
 - Give one action clear priority; keep secondary actions quiet. Explain actions and states with text, not color alone.
@@ -51,5 +53,6 @@ Use for fast prototypes, small flows, forms, and early product experiments. Prio
 
 - The page is responsive, readable, intentional, and easy to edit.
 - The UI contains only what the flow needs and uses clear typographic hierarchy.
+- Typography stays within a `2x` scale from the base size, and whitespace separates sections without creating oversized gaps.
 - Relevant states, labels, errors, and accessible semantics are covered.
 - Existing roundedness and default styling remain intact; no decorative borders, dividers, or bordered containers were added. No unnecessary production logic, persistence, custom effects, or animation was added.
