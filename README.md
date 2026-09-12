@@ -1,6 +1,6 @@
 ### Brief
 
-A small pile of instructions for AI coding agents with opinions.
+A small pile of instructions for AI agents with opinions.
 
 ```bash
 npx skills add https://github.com/reshaditiya/skills --skill [skill name]
