@@ -40,6 +40,7 @@ Default to a quiet, text-first wiki or article page. The page should feel like r
 - Treat the page like readable markdown: one clear heading, short supporting copy, meaningful sections, and obvious actions. Prefer document flow over card grids, dashboard chrome, or decorative containers.
 - Let whitespace, rather than containers, separate related sections and controls. Give the page generous, purposeful spacing without crowding it or stretching it to fill the viewport.
 - Treat text as the primary visual material. Use careful copy, type size, weight, line height, spacing, and neutral shades to create hierarchy.
+- Give each semantic text role a distinct level: make the page title largest and strongest, step down clearly for section headings and supporting copy, keep body text comfortable to read, and make labels, metadata, and state messages smaller and quieter without sacrificing contrast. Use size, weight, line height, spacing, and contrast together rather than relying on color alone or giving every section the same treatment.
 - Keep muted text readable and avoid marketing filler, inflated claims, and placeholder-sounding copy.
 - Make long text and narrow screens work without horizontal scrolling.
 
@@ -92,6 +93,7 @@ Default to a quiet, text-first wiki or article page. The page should feel like r
 - The page is responsive, readable, and has purposeful breathing room.
 - The UI includes only what is needed to understand the requested flow.
 - Typography and copy provide the visual hierarchy through a markdown-like document flow.
+- Each semantic section has a clear typographic level, with responsive sizing and readable contrast across titles, headings, body text, labels, and state copy.
 - Product-facing copy is brief, casual, and fun, with a friendly bro-like voice and jokes that feel natural.
 - The experience feels intentional and finished, not like a demo or unfinished experiment.
 - Relevant states, labels, and field-level errors are covered.
