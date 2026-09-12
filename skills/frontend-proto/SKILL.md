@@ -5,100 +5,51 @@ description: Use for quick, text-first frontend prototypes and small UI flows wi
 
 # Frontend Prototyping
 
-Use this skill for fast prototypes, small flows, forms, and early product experiments. Prioritize developer experience, clarity, and easy iteration over visual spectacle or production-grade polish. Default to a small, responsive page that makes the requested flow understandable.
+Use for fast prototypes, small flows, forms, and early product experiments. Prioritize clarity, easy iteration, and library defaults over visual spectacle. Default to a small, responsive page that makes the requested flow understandable.
 
-## Aesthetic Goal
+## Principles
 
-Default to a quiet, text-first wiki or article page. The page should feel like readable Markdown: a simple responsive one-column document where typography, a comfortable reading measure, and generous whitespace establish hierarchy. Keep the visual treatment restrained and neutral; avoid dashboard chrome, card grids, decorative containers, and marketing-heavy presentation unless the request specifically calls for them.
+- Keep the product-facing experience intentional and finished. Do not expose prototype, demo, placeholder, or unfinished language; do not use lorem ipsum, fake claims, TODOs, or apology copy.
+- Implement only the layout, copy, controls, and state scaffolds needed to understand the flow. Keep it to one page unless the flow requires more.
+- Do not add business logic, API calls, authentication, persistence, data fetching, or routing unless explicitly requested. Leave unspecified behavior as a small, named local stub.
 
-## Quality Bar
+## Before Coding
 
-- Treat "prototype" as a scope and iteration constraint, not a visual excuse. Make the product-facing experience feel intentional, coherent, and finished rather than experimental, rushed, or low-effort.
-- Do not expose prototype, experimental, demo, placeholder, or unfinished language in the rendered UI unless the request explicitly calls for it.
-- Use complete-looking labels, states, and copy. Do not render lorem ipsum, fake claims, TODOs, or apology text as part of the product experience.
+- Inspect the framework, package manager, UI library, tokens, reusable components, state management, validation, and form patterns.
+- If the project is unscaffolded, prefer Next.js with Tailwind CSS and shadcn/ui.
+- Reuse existing components, tokens, utilities, and defaults. Avoid unnecessary dependencies, abstractions, and CSS. Preserve existing roundedness; do not tune radius values.
 
-## Scope
+## Layout and Visuals
 
-- Implement layout, copy, controls, and visual state scaffolds by default.
-- Do not implement business or application logic, API calls, authentication, persistence, data fetching, or routing unless explicitly requested. Leave a small, named local handler or stub for the user to fill in.
-- Show the minimum UI needed to make the page and its states understandable. Do not add sections, controls, or chrome just to make the page feel complete.
-- Preserve existing component roundedness and default styles. Do not add, remove, or tune radius values unless explicitly requested.
+- Prefer a responsive, one-column article or Markdown-like layout with a readable measure, generous whitespace, one clear heading, meaningful sections, and obvious actions. Omit headers, footers, and extra chrome when content alone is enough.
+- Use typography, spacing, contrast, and neutral shades to establish hierarchy. Keep muted text readable and prevent horizontal scrolling.
+- Use mostly neutral existing tokens and one restrained accent. Use semantic colors only for status. Separate content with whitespace, spacing, or existing background treatments rather than custom borders or shadows.
+- Do not add custom gradients, blur, decorative effects, illustrations, images, visualizations, or icons unless explicitly required. Use library-default motion only when needed, never custom animation timing.
+- Give one action clear priority; keep secondary actions quiet. Explain actions and states with text, not color alone.
 
-## Priorities
+## Copy
 
-- Inspect the existing framework, package manager, UI library, state-management and validation patterns, tokens, and form patterns before coding.
-- If the project is not scaffolded yet, prefer Next.js with Tailwind CSS and shadcn/ui by default.
-- Reuse existing components, tokens, utilities, and default styling. Prefer defaults over custom styling, and avoid unnecessary dependencies, abstractions, and CSS.
-- Keep the prototype to one page unless more is required by the flow.
-- Use library-default animation only when motion is needed. Do not create custom animation timing or effects.
-- Use text to explain actions and states. Do not add illustrations, images, visualizations, or icons unless explicitly required.
+- Keep copy brief, plainspoken, casual, and fun. Use specific labels, short sentences, useful microcopy, and occasional relaxed humor.
+- Avoid formal or corporate language, hype, filler, generic slogans, and jokes that obscure status, errors, warnings, or next steps. Never call the product a prototype or experiment unless requested.
 
-## Layout and Type
+## Forms, States, and Semantics
 
-- Prefer a responsive one-column layout with a comfortable readable width.
-- When content alone is sufficient, create only the content section; omit headers, footers, and other sections unless they are needed. Prefer a simple article/Markdown-like layout.
-- Treat the page like readable markdown: one clear heading, short supporting copy, meaningful sections, and obvious actions. Prefer document flow over card grids, dashboard chrome, or decorative containers.
-- Let whitespace, rather than containers, separate related sections and controls. Give the page generous, purposeful spacing without crowding it or stretching it to fill the viewport.
-- Treat text as the primary visual material. Use careful copy, type size, weight, line height, spacing, and neutral shades to create hierarchy.
-- Give each semantic text role a distinct level: make the page title largest and strongest, step down clearly for section headings and supporting copy, keep body text comfortable to read, and make labels, metadata, and state messages smaller and quieter without sacrificing contrast. Use size, weight, line height, spacing, and contrast together rather than relying on color alone or giving every section the same treatment.
-- Keep muted text readable and avoid marketing filler, inflated claims, and placeholder-sounding copy.
-- Make long text and narrow screens work without horizontal scrolling.
+- Reuse existing state and validation patterns. Otherwise, use React `useState` for simple local state or a local `useReducer` for coordinated state; use native constraints such as `required`, `type`, `min`, `max`, and `pattern` when no validation library exists.
+- Give every control a visible label; use appropriate input types, names, and autocomplete hints. Never use placeholder text as the only label.
+- Cover relevant initial, empty, loading, submitting, disabled, success, and error states with concise text. Show field-level errors, preserve values, and do not rely on color or a toast alone. Distinguish inactive states without reducing readability.
+- Use semantic HTML, real buttons and links, logical headings, and landmarks. Prefer native keyboard and focus behavior; add ARIA only when necessary.
 
-## Copywriting
+## Workflow
 
-- Keep product copy brief, plainspoken, casual, and fun. Favor relaxed "bro" energy, playful phrasing, and small jokes over formal, corporate, stiff, or overly serious language. Translate "lazy" into relaxed and effortless, never careless or unfinished.
-- Prefer short sentences, specific labels, and useful microcopy. Let the interface do most of the explaining.
-- Keep jokes and playful asides present when they fit. Humor must not hide the actual status, error, warning, or next step, and it should never become scolding or bleak.
-- Avoid long explanations, marketing language, hype, filler, generic slogans, and placeholder copy.
-- Do not call the product a prototype, experiment, demo, or work in progress in product-facing copy unless explicitly requested.
+1. Inspect the stack and existing building blocks and patterns.
+2. Reduce the request to the smallest useful page, copy, interactions, and states.
+3. Choose existing primitives first, then the smallest suitable local state and validation approach.
+4. Build with existing components, tokens, and defaults; add only required interactions.
+5. Check responsive behavior, wrapping, labels, errors, typography, spacing, contrast, and readability.
 
-## Color and Depth
+## Done When
 
-- Use existing tokens with mostly neutral colors and one restrained accent when needed.
-- Use semantic colors only for errors, warnings, and success.
-- Use whitespace, spacing, typography, and background shading for separation and containment. Do not use borders or drop shadows for those roles.
-- Distinguish loading, empty, disabled, and inactive state UI with a muted shade or reduced opacity. Use blur only when it is already part of the default treatment and does not reduce readability. Never make color or blur the only explanation; include concise state text.
-- Do not add custom borders, drop shadows, gradients, blur, or decorative color effects. Leave any treatment supplied by an existing component or library at its default.
-- Give one action clear visual priority; keep secondary actions quiet.
-
-## Forms and States
-
-- Reuse existing state-management and validation patterns instead of introducing new dependencies.
-- In React, use `useState` for simple local state. When state has multiple related fields, actions, or transitions and no existing solution is provided, use a local Flux-like `useReducer` pattern.
-- Use the existing validation library when one is provided. Otherwise use native browser constraints such as `required`, `type`, `min`, `max`, and `pattern`.
-- Give every control an appropriate visible label. Never use placeholder text as the only label.
-- Use appropriate input types, names, and autocomplete hints when useful.
-- Show field-level errors, preserve entered values, and do not rely on color or a toast alone.
-- Prepare relevant initial, empty, loading, submitting, disabled, success, and error states. Explain them with concise text.
-- Keep unspecified submission and data behavior as a local stub rather than inventing an implementation.
-
-## Semantics
-
-- Use semantic HTML and real buttons and links.
-- Use visible labels and native semantics first. Add `aria-label` or other ARIA only when necessary; keep it minimal so it does not clutter the code.
-- Use logical headings and landmarks. Do not add custom keyboard or focus behavior when native controls are enough.
-
-## Flow
-
-1. Inspect the stack, reusable building blocks, and existing state-management and validation patterns.
-2. Reduce the requirement to the smallest useful page, then define its copy and required states.
-3. Choose the smallest appropriate state primitive: existing patterns first, then `useState` for simple React state or `useReducer` for coordinated React state.
-4. Build the layout and state scaffolds with existing components, tokens, and library defaults.
-5. Add only the required interactions and validation; leave unspecified behavior as stubs.
-6. Check responsive behavior, text wrapping, labels, error messages, typography, spacing, and readability.
-
-## Completion
-
-- DX is simple: existing defaults are reused, custom code is minimal, and the implementation is easy to edit.
-- The page is responsive, readable, and has purposeful breathing room.
-- The UI includes only what is needed to understand the requested flow.
-- Typography and copy provide the visual hierarchy through a markdown-like document flow.
-- Each semantic section has a clear typographic level, with responsive sizing and readable contrast across titles, headings, body text, labels, and state copy.
-- Product-facing copy is brief, casual, and fun, with a friendly bro-like voice and jokes that feel natural.
-- The experience feels intentional and finished, not like a demo or unfinished experiment.
-- Relevant states, labels, and field-level errors are covered.
-- State UI is visibly distinct but remains readable and does not rely on color or blur alone.
-- Existing roundedness and default component styling remain unchanged.
-- No custom borders or drop shadows were added to contain or separate ordinary content.
-- State management and validation use existing patterns or the documented primitive fallbacks.
-- No production business logic, persistence, or custom animation was added without a clear request.
+- The page is responsive, readable, intentional, and easy to edit.
+- The UI contains only what the flow needs and uses clear typographic hierarchy.
+- Relevant states, labels, errors, and accessible semantics are covered.
+- Existing roundedness and default styling remain intact; no unnecessary production logic, persistence, custom effects, or animation was added.
