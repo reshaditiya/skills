@@ -15,3 +15,4 @@ A growing list of procedure in the making.
 | Skill | Use it for |
 | --- | --- |
 | [`frontend-proto`](skills/frontend-proto/SKILL.md) | Quick, accessible frontend prototypes without overbuilding. |
+| [`legacy-modernize`](skills/legacy-modernize/SKILL.md) | Incrementally modernizing legacy applications while preserving existing behavior and conventions. |
